@@ -26,3 +26,4 @@
 ## 参考にした web サイトなど
 
   - http://www.kogures.com/hitoshi/javascript/chartjs/scale-label.html
+  
