@@ -17,6 +17,7 @@
 
   <body>
     <div class="stopwatch-container">
+      <p>Today's Study Time</p>
       <div class="stopwatch">
         <div id="timer">00:00:00</div>
       </div>
@@ -41,13 +42,17 @@
     <div class="chart_box">
       <canvas id="week_study_chart"></canvas>
     </div>
-    <div class="weeklystudy">
-      <p id="week_hour" contenteditable spellcheck="false">00</p>
-      <p contenteditable spellcheck="false">:</p>
-      <p id="week_minute" contenteditable spellcheck="false">00</p>
-      <p contenteditable spellcheck="false">:</p>
-      <p id="week_second" contenteditable spellcheck="false">00</p>
+    <div class="weekly-container">
+      <p class="weeknowtime">Weekly Study Time</p>
+      <div class="weeklystudy">
+        <p id="week_hour" contenteditable spellcheck="false">00</p>
+        <p contenteditable spellcheck="false">:</p>
+        <p id="week_minute" contenteditable spellcheck="false">00</p>
+        <p contenteditable spellcheck="false">:</p>
+        <p id="week_second" contenteditable spellcheck="false">00</p>
+      </div>
     </div>
+
 
     <div class="weekly_buttoncontainer">
       <button id="w_kiroku">SAVE</button>
@@ -75,7 +80,7 @@
       </div>
 
       <div class="overlay" id="close">
-          <p>これまでの勉強時間</p>
+        <p>Total Study Time</p>
           <div class="allstudyrecord" id="all_study_record">
             <p contenteditable spellcheck="false">000</p>
             <p contenteditable spellcheck="false">:</p>

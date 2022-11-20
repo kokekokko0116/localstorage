@@ -2,19 +2,25 @@ body {
   max-width: 800px;
   height: 100vh;
   margin: 0 auto;
+  font-family:"HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  font-weight: 600;
 }
 
 
 
 #timer {
   font-size: 70px;
-  color: orange;
+  color: rgb(240, 131, 0);
 }
 .stopwatch-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.stopwatch-container p{
+  font-size: 16px;
+  margin-bottom: 0;
 }
 .stopwatch {
   display: flex;
@@ -40,31 +46,42 @@ body {
   align-items: center;
 }
 
-/* @import url(https://fonts.googleapis.com/css?family=Exo+2:200i); */
 
+/* @import url(https://fonts.googleapis.com/css?family=Exo+2:200i); */
+/* 
 :root {
-  /* Base font size */
   font-size: 8px;
 
-  /* Set neon color */
   --neon-text-color: rgb(22, 247, 89);
+} */
+
+.weekly-container{
+  background-color: rgb(240, 131, 0, 0.6);
+  border: rgb(240, 131, 0) solid 2px;
+  border-radius: 30px;
+  margin: 18px 0;
+  padding: 0 10px;
+}
+.weeknowtime{
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 0;
 }
 .weeklystudy{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 150px;
+  height: 120px;
 }
 .weeklystudy p {
   font-size: 80px;
-  font-style: italic;
   color: white;
-  animation: flicker 2s infinite alternate;
 }
 
 /* Animate neon flicker */
-@keyframes flicker {
+/* @keyframes flicker {
   0%,
   19%,
   21%,
@@ -78,7 +95,7 @@ body {
       0 0 6rem var(--neon-text-color), 0 0 8rem var(--neon-text-color),
       0 0 10rem var(--neon-text-color);
   }
-}
+} */
 
 .weekly_buttoncontainer {
   display: flex;
@@ -112,14 +129,14 @@ body {
   position: fixed;
   right: 10px;
   bottom: 10px;
-  background: orange;
+  background: rgb(0, 0, 86);
   padding: 10px;
   border: solid 1px;
   border-radius: 50%;
 }
 .record-button img{
   object-fit: cover;
-  width: 100%;
+  width: 90%;
 }
 #open{
   cursor: pointer;
@@ -151,8 +168,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 70px;
-  font-style: italic;
-  color: orange;
+  color: rgb(240, 131, 0);
 }
 .overlay.show{
   opacity: 1;
@@ -167,7 +183,7 @@ body {
   position: fixed;
   right: 10px;
   bottom: 10px;
-  background: orange;
+  background:  rgb(0, 0, 86);
   padding: 10px;
   border: solid 1px;
   border-radius: 50%;
