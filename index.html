@@ -1,61 +1,91 @@
 <!DOCTYPE html>
 <html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>勉強時間管理</title>
+    <link rel="icon" href="./img/favicon.png" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+      integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/styles.css">
-  <title>Document</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
+  <body>
+    <div class="stopwatch-container">
+      <div class="stopwatch">
+        <div id="timer">00:00:00</div>
+      </div>
+      <div class="stopwatch">
+        <button id="start">START</button>
+        <button id="stop">STOP</button>
+        <button id="reset">RESET</button>
 
-<body>
-<div class="stopwatch-container">
-  <div class="stopwatch">
-    <div id="timer">00:00:00</div>
-  </div>
-  <div class="stopwatch">
-    <button id="start">START</button>
-    <button id="stop">STOP</button>
-    <button id="reset">RESET</button>
-  
-    <select name="weekday" id="weekday">
-      <option value="Saturday">Saturday</option>
-      <option value="Sunday">Sunday</option>
-      <option value="Monday">Monday</option>
-      <option value="Tuesday">Tuesday</option>
-      <option value="Wednesday">Wednesday</option>
-      <option value="Thursday">Thursday</option>
-      <option value="Friday">Friday</option>
-    </select>
-    <button id="kiroku">保存</button>
-  </div>
-</div>
-
-  <div class="chart_box" >
-    <canvas id="week_study_chart"></canvas>
-  </div>
-  <div class="weeklystudy">
-    <p id="week_hour" contenteditable spellcheck="false">00</p>
-    <p contenteditable spellcheck="false">:</p>
-    <p id="week_minute" contenteditable spellcheck="false">00</p>
-    <p contenteditable spellcheck="false">:</p>
-    <p id="week_second" contenteditable spellcheck="false">00</p>
-  </div>
-
-  <div class="weekly_buttoncontainer">
-    <button id="w_reset">RESET</button>
-    <div class="content">
-      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large"
-        data-show-count="false">Tweet</a>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <select name="weekday" id="weekday">
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+        </select>
+        <button id="kiroku">SAVE</button>
+      </div>
     </div>
-  </div>
 
+    <div class="chart_box">
+      <canvas id="week_study_chart"></canvas>
+    </div>
+    <div class="weeklystudy">
+      <p id="week_hour" contenteditable spellcheck="false">00</p>
+      <p contenteditable spellcheck="false">:</p>
+      <p id="week_minute" contenteditable spellcheck="false">00</p>
+      <p contenteditable spellcheck="false">:</p>
+      <p id="week_second" contenteditable spellcheck="false">00</p>
+    </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="js/main.js"></script>
-</body>
+    <div class="weekly_buttoncontainer">
+      <button id="w_kiroku">SAVE</button>
+      <button id="w_reset">RESET</button>
+      <div class="content">
+        <a
+          href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+          class="twitter-share-button"
+          data-size="large"
+          data-show-count="false"
+          >Tweet</a
+        >
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
+      </div>
+      
+      <div class="record-button" id="open">
+          <img src="./img/benkyo.png" alt="">
+      </div>
+      <div class="sand-watch" id="sand_watch">
+        <img src="./img/favicon.png" alt="">
+      </div>
 
+      <div class="overlay" id="close">
+          <p>これまでの勉強時間</p>
+          <div class="allstudyrecord" id="all_study_record">
+            <p contenteditable spellcheck="false">000</p>
+            <p contenteditable spellcheck="false">:</p>
+            <p contenteditable spellcheck="false">00</p>
+            <p contenteditable spellcheck="false">:</p>
+            <p contenteditable spellcheck="false">00</p>
+          </div>
+      </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
