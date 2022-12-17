@@ -152,15 +152,19 @@
     w_reset.disabled = false;
   }
 
+  // スター度画面のボタン設定
   setbuttoninitial();
 
+  // ストップウォッチのボタン集
+  // ストップウォッチスタート
   start.addEventListener("click", () => {
     setbuttonrunning();
     startTime = Date.now();
     countUp();
-    sand_watch.classList.add("show"); // 砂時計関連
+    sand_watch.classList.add("show"); // 砂時計召喚
   });
 
+  // ストップウォッチストップ
   stop.addEventListener("click", () => {
     setbuttonstopped();
     clearTimeout(timeoutId);
@@ -168,24 +172,25 @@
     sand_watch.classList.remove("show"); // 砂時計関連
   });
 
+  // ストップウォッチリセット
   reset.addEventListener("click", () => {
     setbuttoninitial();
     timer.textContent = "00:00:00";
     elapsedTime = 0;
   });
 
-  // 上部SAVEボタン押してからの挙動
+  // ストップウォッチセーブ
   kiroku.addEventListener("click", () => {
-    const weekday = document.getElementById("weekday").value;
+    const weekday = document.getElementById("weekday").value; // selectされた曜日を取得
 
     if (localStorage.getItem(`${weekday}`)) {
-      const sum = Number(localStorage.getItem(`${weekday}`)) + elapsedTime;
+      const sum = Number(localStorage.getItem(`${weekday}`)) + elapsedTime; // selectされた曜日のストレージと現在時間の和
       localStorage.setItem(`${weekday}`, sum);
     } else {
       localStorage.setItem(`${weekday}`, elapsedTime);
     }
 
-    location.reload();
+    location.reload(); // グラフを更新
     weekly_sum();
     let sum = 0;
     for (let i = 0; i < 7; i++) {
